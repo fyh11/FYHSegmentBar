@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FYHSegmentBar_Example' do
+  pod 'FYHSegmentBar', :path => '../'
+
+  target 'FYHSegmentBar_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
