@@ -1,0 +1,6 @@
+framework module FYHSegmentBar {
+  umbrella header "FYHSegmentBar-umbrella.h"
+
+  export *
+  module * { export * }
+}
