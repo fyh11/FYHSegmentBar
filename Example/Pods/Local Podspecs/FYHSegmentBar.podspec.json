@@ -1,0 +1,22 @@
+{
+  "name": "FYHSegmentBar",
+  "version": "0.1.0",
+  "summary": "A short description of FYHSegmentBar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/fyh11/FYHSegmentBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "fyh11": "you@example.com"
+  },
+  "source": {
+    "git": "https://github.com/fyh11/FYHSegmentBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "FYHSegmentBar/Classes/**/*"
+}

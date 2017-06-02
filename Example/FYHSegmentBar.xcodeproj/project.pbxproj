@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		497FD6ABB5E07ADA925F1D84 /* Pods_FYHSegmentBar_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE6F7F518F5B30140E1A4F6 /* Pods_FYHSegmentBar_Example.framework */; };
+		5EC801461EE10F2000FA6E38 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC8013E1EE10F2000FA6E38 /* UIView+Extension.m */; };
+		5EC801471EE10F2000FA6E38 /* YHSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC801401EE10F2000FA6E38 /* YHSegmentBar.m */; };
+		5EC801481EE10F2000FA6E38 /* YHSegmentBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC801421EE10F2000FA6E38 /* YHSegmentBarConfig.m */; };
+		5EC801491EE10F2000FA6E38 /* YHSegmentBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC801441EE10F2000FA6E38 /* YHSegmentBarVC.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,10 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09AEFCB13B80DBD5B2AE85FD /* FYHSegmentBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FYHSegmentBar.podspec; path = ../FYHSegmentBar.podspec; sourceTree = "<group>"; };
+		09AEFCB13B80DBD5B2AE85FD /* FYHSegmentBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FYHSegmentBar.podspec; path = ../FYHSegmentBar.podspec; sourceTree = "<group>"; };
 		0C2BF2138640946601FA70F2 /* Pods-FYHSegmentBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYHSegmentBar_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FYHSegmentBar_Tests/Pods-FYHSegmentBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FC8BBEA64E69F1497C57DFE /* Pods-FYHSegmentBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYHSegmentBar_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FYHSegmentBar_Example/Pods-FYHSegmentBar_Example.release.xcconfig"; sourceTree = "<group>"; };
-		466F5CDE17FB09D252E7DAF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		466F5CDE17FB09D252E7DAF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5EC8013D1EE10F2000FA6E38 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		5EC8013E1EE10F2000FA6E38 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		5EC8013F1EE10F2000FA6E38 /* YHSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSegmentBar.h; sourceTree = "<group>"; };
+		5EC801401EE10F2000FA6E38 /* YHSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSegmentBar.m; sourceTree = "<group>"; };
+		5EC801411EE10F2000FA6E38 /* YHSegmentBarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSegmentBarConfig.h; sourceTree = "<group>"; };
+		5EC801421EE10F2000FA6E38 /* YHSegmentBarConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSegmentBarConfig.m; sourceTree = "<group>"; };
+		5EC801431EE10F2000FA6E38 /* YHSegmentBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSegmentBarVC.h; sourceTree = "<group>"; };
+		5EC801441EE10F2000FA6E38 /* YHSegmentBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSegmentBarVC.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* FYHSegmentBar_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYHSegmentBar_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,7 +73,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		64D276DE14CD97445E782B18 /* Pods-FYHSegmentBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYHSegmentBar_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FYHSegmentBar_Tests/Pods-FYHSegmentBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		680BC7D4BACB374E57A88DC8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		680BC7D4BACB374E57A88DC8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77D9739933AE7A8CEFAA9AEC /* Pods-FYHSegmentBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYHSegmentBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FYHSegmentBar_Example/Pods-FYHSegmentBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		84DFC87103138251ABE341B0 /* Pods_FYHSegmentBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FYHSegmentBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EC801451EE10F2000FA6E38 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5EC8013D1EE10F2000FA6E38 /* UIView+Extension.h */,
+				5EC8013E1EE10F2000FA6E38 /* UIView+Extension.m */,
+				5EC8013F1EE10F2000FA6E38 /* YHSegmentBar.h */,
+				5EC801401EE10F2000FA6E38 /* YHSegmentBar.m */,
+				5EC801411EE10F2000FA6E38 /* YHSegmentBarConfig.h */,
+				5EC801421EE10F2000FA6E38 /* YHSegmentBarConfig.m */,
+				5EC801431EE10F2000FA6E38 /* YHSegmentBarVC.h */,
+				5EC801441EE10F2000FA6E38 /* YHSegmentBarVC.m */,
+			);
+			name = Classes;
+			path = ../../FYHSegmentBar/Classes;
+			sourceTree = "<group>";
+		};
 		5EF25E6403326309C12369F8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +171,7 @@
 		6003F593195388D20070C39A /* Example for FYHSegmentBar */ = {
 			isa = PBXGroup;
 			children = (
+				5EC801451EE10F2000FA6E38 /* Classes */,
 				6003F59C195388D20070C39A /* FYHAppDelegate.h */,
 				6003F59D195388D20070C39A /* FYHAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -394,8 +423,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC801471EE10F2000FA6E38 /* YHSegmentBar.m in Sources */,
 				6003F59E195388D20070C39A /* FYHAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* FYHViewController.m in Sources */,
+				5EC801461EE10F2000FA6E38 /* UIView+Extension.m in Sources */,
+				5EC801481EE10F2000FA6E38 /* YHSegmentBarConfig.m in Sources */,
+				5EC801491EE10F2000FA6E38 /* YHSegmentBarVC.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

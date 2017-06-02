@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FYHSegmentBar'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of FYHSegmentBar.'
+  s.version          = '0.0.1'
+  s.summary          = '一个类似于网易新闻客户端选项卡功能实现'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,14 +17,12 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = '一个类似于网易新闻客户端选项卡功能实现,能够实现选项卡和控制器view同步切换'
 
   s.homepage         = 'https://github.com/fyh11/FYHSegmentBar'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'fyh11' => 'you@example.com' }
+  s.author           = { 'fyh11' => 'fyh_4576.com' }
   s.source           = { :git => 'https://github.com/fyh11/FYHSegmentBar.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

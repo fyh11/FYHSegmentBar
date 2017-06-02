@@ -1,0 +1,6 @@
+framework module Pods_FYHSegmentBar_Example {
+  umbrella header "Pods-FYHSegmentBar_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
