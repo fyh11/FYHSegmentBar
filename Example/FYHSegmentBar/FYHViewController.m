@@ -43,31 +43,39 @@
     self.segmentBarVC.view.frame = self.view.bounds;
     [self.view addSubview:self.segmentBarVC.view];
     
+    NSArray *items = @[@"推荐",@"热点",@"直播",@"视频",@"阳光视频",@"社会热点",@"娱乐",@"科技",@"汽车"];
+    NSMutableArray * childVcs=[NSMutableArray array];
+    for (int i=0; i<items.count; i++) {
+        UITableViewController * vc=[[UITableViewController alloc]init];
+        vc.view.backgroundColor=[UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
+        [childVcs addObject:vc];
+    }
     
-    NSArray *items = @[@"hh", @"gg", @"dd",@"ee",@"ll",@"kk"];
-    
-    // 添加几个自控制器
-    // 在contentView, 展示子控制器的视图内容
-    
-    UIViewController *vc1 = [UIViewController new];
-    vc1.view.backgroundColor = [UIColor redColor];
-    
-    UIViewController *vc2 = [UIViewController new];
-    vc2.view.backgroundColor = [UIColor greenColor];
-    
-    UIViewController *vc3 = [UIViewController new];
-    vc3.view.backgroundColor = [UIColor yellowColor];
-    
-    UIViewController *vc4 = [UIViewController new];
-    vc4.view.backgroundColor = [UIColor redColor];
-    
-    UIViewController *vc5 = [UIViewController new];
-    vc5.view.backgroundColor = [UIColor greenColor];
-    
-    UIViewController *vc6 = [UIViewController new];
-    vc6.view.backgroundColor = [UIColor yellowColor];
-    
-    [self.segmentBarVC setUpItems:items childVc:@[vc1,vc2,vc3,vc4,vc5,vc6]];
+    [self.segmentBarVC setUpItems:items childVc:childVcs];
+
+    [self.segmentBarVC.segmentBar updateConfigWith:^(YHSegmentBarConfig *config) {
+        
+        config.segmentBarBackColor = [UIColor redColor];
+        
+        // 正常状态下选项卡字体的颜色
+        config.itemNormalColor = [UIColor greenColor];
+        // 选中状态下选项卡字体的颜色
+        config.itemSelectColor = [UIColor yellowColor];
+        // 选项卡字体的大小
+        config.itemFont = [UIFont systemFontOfSize:16];
+        
+        config.indicatorH = 2;
+        config.indicatorW = 10;
+        config.indicatorBackColor = [UIColor brownColor];
+        // 是否显示指示器
+        config.isIndicatorShow = YES;
+        
+        config.isNeedSacled = YES;
+        config.maxScale = 1.2;
+        
+        config.coverBackColor = [UIColor blueColor];
+        config.isNeedCoverView = YES;
+    }];
 }
 
 @end

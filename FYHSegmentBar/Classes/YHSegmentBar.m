@@ -9,9 +9,11 @@
 #import "YHSegmentBar.h"
 #import "UIView+Extension.h"
 
-@interface YHSegmentBar ()
+@interface YHSegmentBar ()<UIScrollViewDelegate>
 {
     UIButton *lastBtn;
+    
+    CGFloat _startOffX;
 }
 @property (nonatomic, weak) UIScrollView *contentView;
 
@@ -20,6 +22,8 @@
 @property (nonatomic, weak) UIView *indictorView;
 
 @property (nonatomic, strong) YHSegmentBarConfig *config;
+
+@property (nonatomic, weak) UIView *coverView;
 
 @end
 
@@ -36,8 +40,22 @@
 {
     if (_itemBtns == nil) {
         _itemBtns = [NSMutableArray array];
-    }
+     }
     return _itemBtns;
+}
+
+- (UIView *)coverView
+{
+    if (_coverView == nil) {
+        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        _coverView = coverView;
+        coverView.backgroundColor = self.config.coverBackColor;
+        coverView.layer.cornerRadius = 12.0;
+        coverView.alpha = 0.7;
+        coverView.clipsToBounds = YES;
+        [self.contentView insertSubview:coverView atIndex:0];
+    }
+    return _coverView;
 }
 
 - (void)updateConfigWith: (void(^)(YHSegmentBarConfig *config))segmentBarCog
@@ -54,16 +72,32 @@
         btn.titleLabel.font = self.config.itemFont;
     }
     
+    if (self.config.isIndicatorShow) {
     self.indictorView.backgroundColor = self.config.indicatorBackColor;
 //    self.indictorView.height = self.config.indicatorH;
 //    self.indictorView
+    }else{
+        [self.indictorView removeFromSuperview];
+        self.indictorView = nil;
+    }
     
+    if (self.config.isNeedCoverView) {
+        self.coverView.backgroundColor = self.config.coverBackColor;
+    }else{
+        [self.coverView removeFromSuperview];
+        self.coverView = nil;
+    }
+    
+    if (self.config.isNeedSacled) {
+        lastBtn.transform = CGAffineTransformMakeScale(self.config.maxScale, self.config.maxScale);
+    }
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }
 
 - (UIView *)indictorVIew
 {
+    if (self.config.isIndicatorShow) {
     if (_indictorView == nil) {
         CGFloat indictorHeigth = 2;
         UIView *indictorView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - indictorHeigth, 0, indictorHeigth)];
@@ -73,12 +107,14 @@
     }
     
     return _indictorView;
+    }
 }
 
 - (UIScrollView *)contentView {
     if (!_contentView) {
         UIScrollView *scrollView = [[UIScrollView alloc] init];
         scrollView.showsHorizontalScrollIndicator = NO;
+        scrollView.delegate = self;
         [self addSubview:scrollView];
         _contentView = scrollView;
     }
@@ -136,6 +172,15 @@
         [self.delegate segmentBar:self didSelectIndex:btn.tag fromeIndex:lastBtn.tag];
     }
     
+    [UIView animateWithDuration:0.25 animations:^{
+        if (self.config.isNeedSacled) {
+        
+        lastBtn.transform = CGAffineTransformIdentity;
+        lastBtn.y = 0;
+        btn.transform = CGAffineTransformMakeScale(self.config.maxScale, self.config.maxScale);
+        }
+    }];
+    
     _selectIndex = btn.tag;
     
     lastBtn.selected = NO;
@@ -144,9 +189,17 @@
     
     [UIView animateWithDuration:0.25 animations:^{
         
+        if (self.config.isIndicatorShow) {
         self.indictorVIew.width = btn.width;
         self.indictorVIew.centerX = btn.centerX;
-        
+        }
+            
+        if (self.config.isNeedCoverView) {
+        self.coverView.width = btn.width;
+        self.coverView.centerX = btn.centerX;
+        self.coverView.height = btn.height - 8;
+        self.coverView.centerY = btn.centerY;
+        }
     }];
     CGFloat scrollX = btn.centerX - self.contentView.width * 0.5;
     
@@ -160,7 +213,6 @@
     }
     
     [self.contentView setContentOffset:CGPointMake(scrollX, 0) animated:YES];
-
 }
 
 - (void)layoutSubviews
@@ -185,9 +237,10 @@
     
     CGFloat lastX = margin;
     for (UIButton *btn in _itemBtns) {
-        
+
         // width  height
         [btn sizeToFit];
+        
         // x y
         btn.y = 0;
         btn.x = lastX;
@@ -202,10 +255,31 @@
     }
     
     UIButton *btn = self.itemBtns[self.selectIndex];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        if (self.config.isNeedSacled) {
+            
+            lastBtn.transform = CGAffineTransformIdentity;
+            lastBtn.y = 0;
+            btn.transform = CGAffineTransformMakeScale(self.config.maxScale, self.config.maxScale);
+        }
+    }];
+    
+    if (self.config.isIndicatorShow) {
     self.indictorVIew.width = btn.width + self.config.indicatorW * 2;
     self.indictorVIew.centerX = btn.centerX;
     self.indictorView.height = self.config.indicatorH;
     self.indictorVIew.y = self.height - self.indictorVIew.height;
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        if (self.config.isNeedCoverView) {
+            self.coverView.width = btn.width;
+            self.coverView.centerX = btn.centerX;
+            self.coverView.height = btn.height - 8;
+            self.coverView.centerY = btn.centerY;
+        }
+    }];
 }
 
 - (YHSegmentBarConfig *)config

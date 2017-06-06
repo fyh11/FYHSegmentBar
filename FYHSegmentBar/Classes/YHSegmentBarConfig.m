@@ -12,17 +12,25 @@
 
 + (instancetype)defaultConfig
 {
-    YHSegmentBarConfig *cog = [[YHSegmentBarConfig alloc] init];
-    cog.segmentBarBackColor = [UIColor brownColor];
+    YHSegmentBarConfig *config = [[YHSegmentBarConfig alloc] init];
+    config.segmentBarBackColor = [UIColor brownColor];
     
-    cog.itemNormalColor = [UIColor lightGrayColor];
-    cog.itemSelectColor = [UIColor yellowColor];
-    cog.itemFont = [UIFont systemFontOfSize:15];
+    config.itemNormalColor = [UIColor lightGrayColor];
+    config.itemSelectColor = [UIColor yellowColor];
+    config.itemFont = [UIFont systemFontOfSize:15];
+    config.maxScale = 1;
+    config.isNeedSacled = YES;
     
-    cog.indicatorBackColor = [UIColor redColor];
-    cog.indicatorH = 2;
-    cog.indicatorW = 10;
-    return cog;
+    config.indicatorBackColor = [UIColor redColor];
+    config.isIndicatorShow = YES;
+    config.indicatorH = 2;
+    config.indicatorW = 10;
+    
+    config.isNeedCoverView = YES;
+    // 遮盖的背景颜色默认为黑色
+    config.coverBackColor = [UIColor blackColor];
+    
+    return config;
 }
 
 @end
